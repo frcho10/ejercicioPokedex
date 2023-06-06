@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio Pokedex Web</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <!-- estoy importando boostrap directamente de la url para no descargar los recursos, debido a esto si no hay internet la primera vez que carga
+        el index.html no se vera responsivo ni se verán los estilos -->
+
+        <link rel="stylesheet" href="./src/styles.css">
+        <script src="./src/scripts.js"></script>
+        <script type="text/javascript">
+            setInterval(() => {
+            console.log("Se auto genera petición");
+            traerPokemon();
+            }, 30000);
+        </script>
+    </head>
+    <body>
+        <div class="row justify-content-center text-center header">
+            <div class="col-sm-12 col-md-12 text-center">
+                <h1>Pokedex Web</h1>
+                <p class="text-center">Los pokemón se actualizarán cada 30 segundos o al dar clic en el botón "Mostrar Pokemón"</p> 
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-sm-12 col-md-4 text-center">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img id="imgPokemon" class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 id="namePokemon" class="card-title">Card title</h5>
+                            <br >
+                            <button  id="getPokemon" class="btn btn-primary" onclick="traerPokemon();">Mostrar Pokemón</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
